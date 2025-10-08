@@ -1,52 +1,90 @@
 baseURL = "https://konhoe.github.io/"
-theme = "hugo-theme-introduction"
+title   = "JunYoung Lee"
+theme   = "hugo-theme-introduction"
 DefaultContentLanguage = "en"
-title = "JunYoung Lee"
+
+# 사이트 동작 기본값
+enableRobotsTXT = true
+paginate        = 10
+canonifyURLs    = false        # 절대경로 강제 X (GitHub Pages 루트에 적합)
+relativeURLs    = false
+buildDrafts     = false
+buildFuture     = true         # 미래 날짜 글도 허용 (필요시 false)
+buildExpired    = false
+# minify 옵션은 워크플로우에서 --minify 사용하므로 여기선 생략 가능
 
 [params]
-    themeStyle = "auto"
-    favicon = "/img/fav.ico"
-    showMenu = true
-    showRSSButton = false
-    fadeIn = true
-    fadeInIndex = false
-    dateFormat = "Jan 2, 2006"
-    email = "knj7973@yonsei.ac.kr"
-    github = "https://github.com/konhoe"
-    cv = "https://ko.overleaf.com/read/ffnrdxyybsmk#19c4d4"
-    
-    [params.home]
-        introHeight = "medium"
-        showLatest = false
-        showAllPosts = false
-        numberOfProjectsToShow = 0
-        localTime = false
+  themeStyle      = "auto"
+  favicon         = "/img/fav.ico"
+  showMenu        = true
+  showRSSButton   = false
+  fadeIn          = true
+  fadeInIndex     = false
+  dateFormat      = "Jan 2, 2006"
+  email           = "knj7973@yonsei.ac.kr"
+
+  # About 카드 우측 정보/아이콘
+  fullName        = "JunYoung Lee"
+  overlayName     = "JunYoungLee"  # 사진 우측 표시 이름(공백 없이)
+  shortBio        = "Materials Science & Medical AI Researcher"
+
+  # 빠른 링크(사진 옆 버튼)
+  github          = "https://github.com/konhoe"
+  cv              = "https://ko.overleaf.com/read/ffnrdxyybsmk#19c4d4"
+
+  [params.home]
+    introHeight               = "medium"
+    showLatest                = false
+    showAllPosts              = false
+    numberOfProjectsToShow    = 0
+    localTime                 = false
+
+  # 프로젝트 리스트 2열 레이아웃을 쓰고 싶으면 true
+  [params.projects]
+    useTwoColumns = false
+
+# 소셜 아이콘
+[[params.social]]
+  url       = "https://github.com/konhoe"
+  icon      = "github"
+  icon_pack = "fab"
 
 [[params.social]]
-    url = "https://github.com/konhoe"
-    icon = "github"
-    icon_pack = "fab"
-
-[[params.social]]
-    url = "mailto:knj7973@yonsei.ac.kr"
-    icon = "envelope"
-    icon_pack = "fas"
+  url       = "mailto:knj7973@yonsei.ac.kr"
+  icon      = "envelope"
+  icon_pack = "fas"
 
 [languages]
-    [languages.en]
-        languageName = "English"
-        languageCode = "en-us"
-        contentDir = "content/en"
-        weight = 0
-        title = "JunYoung Lee"
-        [languages.en.params]
-            description = "Materials Science & Medical AI"
+  [languages.en]
+    languageName = "English"
+    languageCode = "en-us"
+    contentDir   = "content/en"
+    weight       = 0
+    title        = "JunYoung Lee"
+    [languages.en.params]
+      description = "Materials Science & Medical AI"
 
+# Hugo 마크업 설정
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       hardWraps = false
-      xHTML = false
-      unsafe = true
+      xHTML     = false
+      unsafe    = true      # HTML 포함 허용
     [markup.goldmark.parser]
-      autoHeadingID = false
+      autoHeadingID = false # ✅ 섹션 제목에 자동 앵커(링크) 생성 금지
+
+  # 코드블럭 등 하이라이트(필요 없으면 유지)
+  [markup.highlight]
+    noClasses = false
+    guessSyntax = true
+
+# (선택) RSS/검색 등 출력 타입
+[outputs]
+  home    = ["HTML", "RSS"]
+  section = ["HTML"]
+  page    = ["HTML"]
+
+# (선택) 퍼머링크 커스터마이즈가 필요하면 여기에
+# [permalinks]
+#   posts = "/:slug/"
