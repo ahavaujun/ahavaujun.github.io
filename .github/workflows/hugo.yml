@@ -2,7 +2,7 @@ name: Deploy Hugo to GitHub Pages
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -21,30 +21,26 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: true        # ⬅ themes 서브모듈이면 필수
+          submodules: false
           fetch-depth: 0
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: 'latest'
+          hugo-version: "latest"
           extended: true
-      - name: Install deps (optional)
-        run: |
-          if [ -f package.json ]; then npm ci; fi
-      - name: Build
-        run: hugo --minify
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./public
 
-  deploy:
-    needs: build
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
+      # ✅ PostCSS 설치 단계 추가
+      - name: Install PostCSS and autoprefixer
+        run: |
+          npm install -g postcss postcss-cli autoprefixer
+
+      - name: Build
+        run: |
+          hugo --minify --source .
+
       - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
