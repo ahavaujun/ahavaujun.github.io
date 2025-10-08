@@ -36,7 +36,7 @@ align: "right"
 
 <br>
 
-### 🔬 Research Projects
+### 🔬 Research Projects (Publications - level Works)
 <br>
 
 - #### BioMatAI - Biocompatible Material Prediction (at tAI LAB)

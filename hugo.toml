@@ -3,8 +3,9 @@ title   = "JunYoung Lee"
 theme   = "hugo-theme-introduction"
 DefaultContentLanguage = "en"
 
-# 사이트 동작 기본값
+
 enableRobotsTXT = true
+
 
 [pagination]
   pagerSize = 10
@@ -17,7 +18,7 @@ buildExpired    = false
 
 [params]
   themeStyle      = "auto"
-  favicon         = "/img/fav.ico"
+  favicon         = "/img/fav.png"
   showMenu        = true
   showRSSButton   = false
   fadeIn          = true
@@ -64,7 +65,7 @@ buildExpired    = false
     weight       = 0
     title        = "JunYoung Lee"
     [languages.en.params]
-      description = "Materials Science & Medical AI"
+      description = "Personal website of JunYoung Lee — Materials Science & Medical AI Researcher, LLM, VLM, Medicial AI, Material AI"
 
 # Hugo 마크업 설정
 [markup]
