@@ -29,7 +29,7 @@ align: "right"
 ### 💡 Personal Projects
 <br>
 
-- #### Namdong-Senior-Web Project
+- #### Namdong-Senior-Web Main Project
     - A volunteer and development project was launched to address the lack of a main website for senior job postings. 
     - Planning and developing a portal where senior job postings in Namdong-gu can be viewed in one place.
     - **Tech:** Next.js, Supabase, React [github →](https://github.com/burnout909/uxim-namdong-web.git)
