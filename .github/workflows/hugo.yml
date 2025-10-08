@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write       # ✅ gh-pages 브랜치 푸시 허용
   pages: write
   id-token: write
 
@@ -21,7 +21,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: false
+          submodules: false   # 이미 테마 파일 포함된 상태라 false
           fetch-depth: 0
 
       - name: Setup Hugo
@@ -30,17 +30,21 @@ jobs:
           hugo-version: "latest"
           extended: true
 
-      # ✅ PostCSS 설치 단계 추가
       - name: Install PostCSS and autoprefixer
         run: |
           npm install -g postcss postcss-cli autoprefixer
 
-      - name: Build
+      - name: Build site
         run: |
           hugo --minify --source .
 
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+          publish_branch: gh-pages   # ✅ gh-pages 브랜치에 배포
+          enable_jekyll: false       # ✅ .nojekyll 파일 생성 → Hugo용
+          allow_empty_commit: false
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
