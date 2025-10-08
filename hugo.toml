@@ -1,0 +1,52 @@
+baseURL = "http://localhost:1313/"
+theme = "hugo-theme-introduction"
+DefaultContentLanguage = "en"
+title = "JunYoung Lee"
+
+[params]
+    themeStyle = "auto"
+    favicon = "/img/fav.ico"
+    showMenu = true
+    showRSSButton = false
+    fadeIn = true
+    fadeInIndex = false
+    dateFormat = "Jan 2, 2006"
+    email = "knj7973@yonsei.ac.kr"
+    github = "https://github.com/konhoe"
+    cv = "https://ko.overleaf.com/read/ffnrdxyybsmk#19c4d4"
+    
+    [params.home]
+        introHeight = "medium"
+        showLatest = false
+        showAllPosts = false
+        numberOfProjectsToShow = 0
+        localTime = false
+
+[[params.social]]
+    url = "https://github.com/konhoe"
+    icon = "github"
+    icon_pack = "fab"
+
+[[params.social]]
+    url = "mailto:knj7973@yonsei.ac.kr"
+    icon = "envelope"
+    icon_pack = "fas"
+
+[languages]
+    [languages.en]
+        languageName = "English"
+        languageCode = "en-us"
+        contentDir = "content/en"
+        weight = 0
+        title = "JunYoung Lee"
+        [languages.en.params]
+            description = "Materials Science & Medical AI"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      hardWraps = false
+      xHTML = false
+      unsafe = true
+    [markup.goldmark.parser]
+      autoHeadingID = false
