@@ -1,4 +1,4 @@
-baseURL = "http://localhost:1313/"
+baseURL = "https://konhoe.github.io/"
 theme = "hugo-theme-introduction"
 DefaultContentLanguage = "en"
 title = "JunYoung Lee"
