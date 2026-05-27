@@ -1,4 +1,4 @@
-baseURL = "https://konhoe.github.io/"
+baseURL = "https://ahavaujun.github.io/"
 title   = "JunYoung Lee"
 theme   = "hugo-theme-introduction"
 DefaultContentLanguage = "en"
@@ -32,8 +32,8 @@ buildExpired    = false
   shortBio        = "Materials Science & Medical AI Researcher"
 
   # 빠른 링크(사진 옆 버튼)
-  github          = "https://github.com/konhoe"
-  cv              = "https://ko.overleaf.com/read/ffnrdxyybsmk#19c4d4"
+  github          = "https://github.com/ahavaujun"
+  cv              = "/JunYoung_Lee_CV.pdf"
 
   [params.home]
     introHeight               = "medium"
@@ -48,7 +48,7 @@ buildExpired    = false
 
 # 소셜 아이콘
 [[params.social]]
-  url       = "https://github.com/konhoe"
+  url       = "https://github.com/ahavaujun"
   icon      = "github"
   icon_pack = "fab"
 
